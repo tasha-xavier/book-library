@@ -5,9 +5,9 @@ import {
     RouterProvider
 } from 'react-router-dom';
 import App from './App';
-import MyBooks from './components/MyBooks';
-import ToBeRead from './components/ToBeRead';
-import CurrentlyReading from './components/CurrentlyReading';
+import MyBooks from './views/MyBooks';
+import ToBeRead from './views/ToBeRead';
+import CurrentlyReading from './views/CurrentlyReading';
 
 const domNode = document.getElementById('root');
 const root = createRoot(domNode);
