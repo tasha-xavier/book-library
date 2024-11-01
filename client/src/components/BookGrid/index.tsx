@@ -9,14 +9,14 @@ interface BookGridProps {
         title: string;
         bio: string;
         id: string;
-        image: string;
+        imageurl: string;
     }>
 }
 
 const BookGrid = ({ books } : BookGridProps) => (
     <div className="book-grid">
-        {books.map(({ title, bio, id, image }) => (
-            <Book title={title} bio={bio} id={id} image={image} />
+        {books.map(({ title, bio, id, imageurl }) => (
+            <Book title={title} bio={bio} id={id} image={imageurl} />
         ))}
     </div>
 )

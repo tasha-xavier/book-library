@@ -11,11 +11,12 @@ const MyBooks = () => {
                 "accepts": "application/json"
             }
         })
-            .then((res) =>  res.json())
-            .then(({ data }) => {
+            .then((res) => res.json())
+            .then((data) => {
                 setBooks(data);
             })
     }, []);
+
     return (
         <>
             <h1>My books</h1>
