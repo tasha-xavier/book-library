@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import BookGrid from '../../components/BookGrid';
+import BookForm from '../../components/BookForm';
 
 const MyBooks = () => {
     const [books, setBooks] = useState([]);
@@ -21,6 +22,7 @@ const MyBooks = () => {
         <>
             <h1>My books</h1>
             <BookGrid books={books} />
+            <BookForm />
         </>
     )
 }

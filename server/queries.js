@@ -40,15 +40,19 @@ const getBooksByAuthor = (request, response) => {
 }
 
 const createBook = (request, response) => {
-    const { title, author, imageUrl, bio  } = request.body
-    
-    pool.query('INSERT INTO books (title, author, imageUrl, bio', [title, author, imageUrl, bio], (error, results) => {
-        if (error) {
-            throw error
-        }
+    const { title, author, imageurl, bio  } = request.body
 
-        response.status(201).send(`Book added with Title: ${results.title}`)
-    })
+    pool.query(
+        'INSERT INTO books (title, author, imageurl, bio) VALUES ($1, $2, $3, $4) RETURNING *', 
+        [title, author, imageurl, bio], 
+        (error, results) => {
+            if (error) {
+                throw error
+            }
+
+            response.status(201).send(`Book added with Title: ${results.rows[0].title}`)
+        }
+    )
 }
 
 module.exports = {
